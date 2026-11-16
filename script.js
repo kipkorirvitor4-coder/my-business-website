@@ -173,14 +173,39 @@ function closeCart() {
   document.getElementById("cart-modal").hidden = true;
 }
 
+
 function checkout() {
   if (cart.length === 0) {
-    alert("Your cart is empty.");
+    alert("Your shopping cart is empty.");
     return;
   }
 
-  alert("Your shopping cart is working! WhatsApp ordering will be connected in the next step.");
+  const phoneNumber = "254769084145";
+
+  let message = "Hello WATUmbao! I would like to enquire about these furniture items:\n\n";
+
+  let total = 0;
+
+  cart.forEach(item => {
+    const product = products.find(p => p.id === item.id);
+    const subtotal = product.price * item.quantity;
+
+    total += subtotal;
+
+    message +=
+      product.name +
+      "\nQuantity: " + item.quantity +
+      "\nSubtotal: KES " + subtotal.toLocaleString("en-KE") +
+      "\n\n";
+  });
+
+  message += "Estimated total: KES " + total.toLocaleString("en-KE");
+  message += "\n\nPlease confirm availability and delivery details.";
+
+  const whatsappURL =
+    "https://wa.me/" + phoneNumber +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
 }
 
-displayProducts(products);
-updateCart();
