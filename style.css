@@ -1,210 +1,278 @@
 
-/* WATUmbao Furniture Website */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #faf9f6;
-    color: #29251f;
-    line-height: 1.6;
-}
-
-/* Navigation */
-
-header {
-    background: #ffffff;
-    padding: 18px 7%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  font-family: Arial, sans-serif;
+  background: #faf8f5;
+  color: #29231f;
+  line-height: 1.6;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 6%;
+  background: #fff;
+  box-shadow: 0 2px 12px #00000012;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 15px;
 }
 
 .logo {
-    color: #79553b;
-    font-size: 27px;
-    font-weight: bold;
-    text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  color: #75452d;
+  text-decoration: none;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    flex-wrap: wrap;
+nav {
+  display: flex;
+  gap: 22px;
 }
 
-.nav-links a {
-    color: #29251f;
-    text-decoration: none;
-    font-weight: bold;
+nav a {
+  color: #29231f;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* Hero section */
+nav a:hover {
+  color: #a66b45;
+}
+
+button, .shop-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  background: #75452d;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cart-button {
+  white-space: nowrap;
+}
 
 .hero {
-    min-height: 480px;
-    background:
-      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600")
-      center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 60px 8%;
-    color: white;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding: 70px 8%;
+  color: white;
+  background:
+    linear-gradient(#24170f88, #24170f88),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600")
+    center/cover no-repeat;
 }
 
 .hero-content {
-    max-width: 650px;
+  max-width: 600px;
+}
+
+.eyebrow {
+  letter-spacing: 3px;
+  margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: clamp(36px, 6vw, 55px);
-    line-height: 1.15;
-    margin-bottom: 20px;
+  font-size: clamp(35px, 6vw, 58px);
+  line-height: 1.15;
+  margin-bottom: 18px;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+.hero-content p {
+  margin-bottom: 25px;
 }
 
-.btn {
-    display: inline-block;
-    background: #a47750;
-    color: white;
-    padding: 13px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+.shop-section {
+  padding: 65px 6%;
+  text-align: center;
 }
 
-/* Furniture collections */
-
-.collections {
-    padding: 70px 7%;
-    text-align: center;
-}
-
-.collections h2,
+.shop-section h2,
 .about h2,
 .contact h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
+  font-size: 32px;
+  margin-bottom: 12px;
 }
 
-.collections > p {
-    margin-bottom: 35px;
-    color: #777;
+#search {
+  width: min(100%, 450px);
+  padding: 14px;
+  margin: 28px 0 18px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.categories button {
+  background: #e9dfd6;
+  color: #493326;
+}
+
+.categories button:hover {
+  background: #75452d;
+  color: white;
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  text-align: left;
 }
 
-.product {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    padding-bottom: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+.product-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px #00000010;
 }
 
-.product img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
+.product-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
 }
 
-.product h3 {
-    margin: 18px 10px 8px;
-    color: #79553b;
+.product-info {
+  padding: 18px;
 }
 
-.product p {
-    padding: 0 15px;
-    margin-bottom: 18px;
+.product-info h3 {
+  margin-bottom: 8px;
 }
 
-.product a {
-    color: #79553b;
-    font-weight: bold;
-    text-decoration: none;
+.product-info p {
+  color: #766e68;
+  margin-bottom: 12px;
 }
 
-/* About section */
+.product-price {
+  color: #75452d;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.product-info button {
+  width: 100%;
+}
+
+.about,
+.contact {
+  text-align: center;
+  padding: 65px 8%;
+}
 
 .about {
-    background: #eee8df;
-    padding: 65px 10%;
-    text-align: center;
+  background: #eee5dc;
 }
-
-.about p {
-    max-width: 750px;
-    margin: auto;
-}
-
-/* Contact section */
 
 .contact {
-    padding: 65px 7%;
-    text-align: center;
+  background: #f8f4ef;
 }
-
-.contact p {
-    margin: 15px 0 25px;
-}
-
-/* Footer */
 
 footer {
-    background: #29251f;
-    color: white;
-    text-align: center;
-    padding: 25px;
+  padding: 25px;
+  text-align: center;
+  background: #29231f;
+  color: white;
 }
 
-/* Mobile responsiveness */
+.cart-modal {
+  position: fixed;
+  inset: 0;
+  background: #0009;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
 
-@media (max-width: 700px) {
+.cart-modal[hidden] {
+  display: none;
+}
 
-    .navbar {
-        flex-direction: column;
-    }
+.cart-content {
+  background: white;
+  width: min(100%, 450px);
+  padding: 25px;
+  border-radius: 10px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
 
-    .nav-links {
-        justify-content: center;
-        gap: 13px;
-    }
+.cart-content h2,
+.cart-content h3 {
+  margin: 15px 0;
+}
 
-    .hero {
-        min-height: 400px;
-    }
+.cart-content button {
+  margin: 5px 0;
+}
 
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
+.close-button {
+  float: right;
+}
 
-    .collections h2,
-    .about h2,
-    .contact h2 {
-        font-size: 26px;
-    }
+#cart-items p {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .shop-section h2,
+  .about h2,
+  .contact h2 {
+    font-size: 26px;
+  }
 }
